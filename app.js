@@ -16,8 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Routes
 app.get('/', function(req, res) {
-    var number = 
-    res.send(number)
+    res.send('Pastebin App Is Alive!')
 })
 
 app.post('/api/paste', function(req, res) {
