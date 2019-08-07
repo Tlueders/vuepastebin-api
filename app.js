@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express()
-const port = 3000
 
 require('dotenv').config()
 
@@ -40,4 +39,4 @@ app.get('/api/pastes/:page_id', cors(), function(req, res) {
 })
 
 // Listen
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(process.env.PORT || 5000)
