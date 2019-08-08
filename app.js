@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
     res.send('Pastebin App Is Alive!')
 })
 
-app.post('/paste', function(req, res) {
+app.post('/api/paste', function(req, res) {
     var paste = req.body.paste
     var language = req.body.language
     var page_id = Math.random().toString(36).replace('0.', '')
@@ -34,7 +34,7 @@ app.post('/paste', function(req, res) {
     })
 })
 
-app.get('/pastes/:page_id', cors(), function(req, res) {
+app.get('/api/pastes/:page_id', cors(), function(req, res) {
     Paste.findAll({ where: {page_id: req.params.page_id} }).then(pastes => res.json(pastes))
 })
 
